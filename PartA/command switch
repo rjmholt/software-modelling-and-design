@@ -1,0 +1,82 @@
+switch (args.length) {
+    case 0:
+        break;
+
+    // Expect "<runSim> <building>" | "<runSim> <rand>" | "<runSim> <detail>"
+    case 1:
+        switch (arg[0]) {
+            case RAND:
+                useDifferentRandomSequence = true;
+                break;
+            case DETAIL:
+                printDetailed = true;
+                break;
+            case LGE_BUILD:
+                buildingSize = BuildingSize.Large;
+                break;
+            case MED_BUILD:
+                buildingSize = BuildingSize.Medium;
+                break;
+            case SML_BUILD:
+                buildingSize = BuildingSize.Small;
+                break;
+            default:
+                throw new IllegalArgumentException(BADARG_MSG);
+        }
+        break;
+
+    // Expect "<runSim> <building>  <rand>"
+    //      | "<runSim> <building>  <detail>"
+    //      | "<runSim> <random>    <detail>"
+    case 2:
+        switch (args[0]) {
+            case LGE_BUILD:
+                buildingSize = BuildingSize.Large;
+                break;
+            case MED_BUILD:
+                buildingSize = BuildingSize.Medium;
+                break;
+            case SML_BUILD:
+                buildingSize = BuildingSize.Small;
+                break;
+            case RAND:
+                useDifferentRandomSequence = true;
+                break;
+            default:
+                throw new IllegalArgumentException(BADARG_MSG);
+        }
+        switch (args[1]) {
+            case RAND:
+                useDifferentRandomSequence = true;
+                break;
+            case DETAIL:
+                printDetailed = true;
+                break;
+            default:
+                throw new IllegalArgumentException(BADARG_MSG);
+        }
+        break;
+
+    // Expect "<runSim> <building> <rand> <detail>"
+    case 3:
+        switch (args[0]) {
+            case LGE_BUILD:
+                buildingSize = BuildingSize.Large;
+                break;
+            case MED_BUILD:
+                buildingSize = BuildingSize.Medium;
+                break;
+            case SML_BUILD:
+                buildingSize = BuildingSize.Small;
+                break;
+            default:
+                throw new IllegalArgumentException(BADARG_MSG);
+        }
+        if (RAND.equals(args[1]) && DETAIL.equals(args[2])) {
+            useDifferentRandomSequence = true;
+            printDetailed = true;
+            break;
+        }
+        // If we get here, 2nd and 3rd arguments are wrong
+        throw new IllegalArgumentException(BADARG_MSG);
+}
