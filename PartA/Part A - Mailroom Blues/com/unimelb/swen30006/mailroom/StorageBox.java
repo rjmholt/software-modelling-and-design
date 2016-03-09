@@ -93,7 +93,7 @@ public class StorageBox {
      */
     public Summary generateSummary(String id){
         // Count the number of unique floors to deliver to
-        HashSet<Integer> floors = new HashSet<Integer>();
+        HashSet<Integer> floors = new HashSet<>();
         Iterator<MailItem> itemIterator = this.mail.iterator();
         while(itemIterator.hasNext()){
             MailItem item = itemIterator.next();

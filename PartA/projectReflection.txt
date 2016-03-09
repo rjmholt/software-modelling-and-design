@@ -37,3 +37,5 @@ Constructive Criticism:
     which rather than being self-documenting, requires a documentation
     lookup to understand. This could be improved with a named variable or
     an enum (which would also permit more than two possibilities)
+  - The inner class MailBox.Summary has no documenting description of its
+    attributes, despite serving as an information passing class

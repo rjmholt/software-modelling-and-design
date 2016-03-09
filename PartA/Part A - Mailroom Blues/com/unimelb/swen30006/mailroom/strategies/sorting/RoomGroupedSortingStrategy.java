@@ -36,9 +36,7 @@ public class RoomGroupedSortingStrategy implements SortingStrategy
                 }
                 // If it doesn't, increment the box count
                 // in case we need to make a new box
-                else {
-                    boxNum++;
-                }
+                boxNum++;
             }
         }
         // If no suitable mailboxes are found, make a new one
