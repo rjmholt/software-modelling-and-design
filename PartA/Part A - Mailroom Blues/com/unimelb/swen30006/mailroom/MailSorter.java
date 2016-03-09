@@ -45,7 +45,7 @@ public class MailSorter implements Stepable {
                 MailItem nextMail = source.nextItem();
                 // Retrieve identifier
                 String identifier = strategy.assignStorage(nextMail, this.storage);
-                System.out.println("MailBox: " + identifier);
+                //System.out.println("MailBox: " + identifier);
                 // Assign Storage
                 StorageBox box = this.storage.retrieveBox(identifier);
                 box.addItem(nextMail);

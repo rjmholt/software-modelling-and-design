@@ -5,6 +5,9 @@
 package com.unimelb.swen30006.mailroom;
 
 import com.unimelb.swen30006.mailroom.samples.*;
+import com.unimelb.swen30006.mailroom.strategies.delivery.RandomSelectionStrategy;
+import com.unimelb.swen30006.mailroom.strategies.delivery.SortedByFloorDeliveryStrategy;
+import com.unimelb.swen30006.mailroom.strategies.selection.FullnessSelectionStrategy;
 import com.unimelb.swen30006.mailroom.strategies.sorting.RoomGroupedSortingStrategy;
 
 import java.util.ArrayList;
@@ -250,9 +253,9 @@ public class Simulation
         }
 
         // Create the appropriate strategies
-        SortingStrategy sortStrategy = new RoomGroupedSortingStrategy();
-        SelectionStrategy selectionStrategy = new SimpleSelectionStrategy();
-        DeliveryStrategy deliveryStrategy = new SimpleDeliveryStrategy();
+        SortingStrategy sortStrategy = new SimpleSortingStrategy();
+        SelectionStrategy selectionStrategy = new RandomSelectionStrategy();
+        DeliveryStrategy deliveryStrategy = new SortedByFloorDeliveryStrategy();
 
         // Run the simulation with the appropriate arguments
         runSimulation(minFloor, maxFloor, numMail, maxBoxes, maxMailUnits, numBots,
