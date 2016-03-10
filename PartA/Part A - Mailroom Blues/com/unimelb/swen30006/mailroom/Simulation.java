@@ -8,6 +8,7 @@ import com.unimelb.swen30006.mailroom.samples.*;
 import com.unimelb.swen30006.mailroom.strategies.delivery.RandomSelectionStrategy;
 import com.unimelb.swen30006.mailroom.strategies.delivery.SortedByFloorDeliveryStrategy;
 import com.unimelb.swen30006.mailroom.strategies.selection.FullnessSelectionStrategy;
+import com.unimelb.swen30006.mailroom.strategies.sorting.RandomSortingStrategy;
 import com.unimelb.swen30006.mailroom.strategies.sorting.RoomGroupedSortingStrategy;
 
 import java.util.ArrayList;
@@ -115,14 +116,14 @@ public class Simulation
         // --- Command-line argument configuration ---
 
         // Declare variables to hold argument-configured settings
-        int minFloor = MIN_FLOOR,
-            maxFloor = MAX_FLOOR,
-            numMail = NUM_MAIL,
-            maxBoxes = MAX_BOXES,
-            maxMailUnits = MAX_MAIL_UNITS,
-            numBots = NUM_BOTS,
+        int minFloor      = MIN_FLOOR,
+            maxFloor      = MAX_FLOOR,
+            numMail       = NUM_MAIL,
+            maxBoxes      = MAX_BOXES,
+            maxMailUnits  = MAX_MAIL_UNITS,
+            numBots       = NUM_BOTS,
             mailRoomLevel = MAIL_ROOM_LEVEL,
-            numRuns = NUM_RUNS;
+            numRuns       = NUM_RUNS;
         boolean isPredictable = true,
                 printDetailed = false;
         BuildingSize buildingSize = BuildingSize.Unspecified;
@@ -224,28 +225,28 @@ public class Simulation
         // Configure the building attributes for simulation based on user selection
         switch (buildingSize) {
             case Large:
-                minFloor = LargeBuildingAttributes.MIN_FLOOR;
-                maxFloor = LargeBuildingAttributes.MAX_FLOOR;
-                maxBoxes = LargeBuildingAttributes.MAX_BOXES;
-                maxMailUnits = LargeBuildingAttributes.MAX_MAIL_UNITS;
+                minFloor      = LargeBuildingAttributes.MIN_FLOOR;
+                maxFloor      = LargeBuildingAttributes.MAX_FLOOR;
+                maxBoxes      = LargeBuildingAttributes.MAX_BOXES;
+                maxMailUnits  = LargeBuildingAttributes.MAX_MAIL_UNITS;
                 mailRoomLevel = LargeBuildingAttributes.MAIL_ROOM_LEVEL;
-                numBots = LargeBuildingAttributes.NUM_BOTS;
+                numBots       = LargeBuildingAttributes.NUM_BOTS;
                 break;
             case Medium:
-                minFloor = MediumBuildingAttributes.MIN_FLOOR;
-                maxFloor = MediumBuildingAttributes.MAX_FLOOR;
-                maxBoxes = MediumBuildingAttributes.MAX_BOXES;
-                maxMailUnits = MediumBuildingAttributes.MAX_MAIL_UNITS;
+                minFloor      = MediumBuildingAttributes.MIN_FLOOR;
+                maxFloor      = MediumBuildingAttributes.MAX_FLOOR;
+                maxBoxes      = MediumBuildingAttributes.MAX_BOXES;
+                maxMailUnits  = MediumBuildingAttributes.MAX_MAIL_UNITS;
                 mailRoomLevel = MediumBuildingAttributes.MAIL_ROOM_LEVEL;
-                numBots = MediumBuildingAttributes.NUM_BOTS;
+                numBots       = MediumBuildingAttributes.NUM_BOTS;
                 break;
             case Small:
-                minFloor = SmallBuildingAttributes.MIN_FLOOR;
-                maxFloor = SmallBuildingAttributes.MAX_FLOOR;
-                maxBoxes = SmallBuildingAttributes.MAX_BOXES;
-                maxMailUnits = SmallBuildingAttributes.MAX_MAIL_UNITS;
+                minFloor      = SmallBuildingAttributes.MIN_FLOOR;
+                maxFloor      = SmallBuildingAttributes.MAX_FLOOR;
+                maxBoxes      = SmallBuildingAttributes.MAX_BOXES;
+                maxMailUnits  = SmallBuildingAttributes.MAX_MAIL_UNITS;
                 mailRoomLevel = SmallBuildingAttributes.MAIL_ROOM_LEVEL;
-                numBots = SmallBuildingAttributes.NUM_BOTS;
+                numBots       = SmallBuildingAttributes.NUM_BOTS;
                 break;
             default:
                 // Use the default values already assigned
@@ -253,7 +254,7 @@ public class Simulation
         }
 
         // Create the appropriate strategies
-        SortingStrategy sortStrategy = new SimpleSortingStrategy();
+        SortingStrategy sortStrategy = new RandomSortingStrategy(maxBoxes);
         SelectionStrategy selectionStrategy = new RandomSelectionStrategy();
         DeliveryStrategy deliveryStrategy = new SortedByFloorDeliveryStrategy();
 
