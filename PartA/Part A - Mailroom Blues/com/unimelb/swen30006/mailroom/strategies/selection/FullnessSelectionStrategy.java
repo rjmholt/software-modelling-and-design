@@ -1,3 +1,7 @@
+/**
+ * Author: Robert Holt
+ * Last Modified: 2016-03-11
+ */
 package com.unimelb.swen30006.mailroom.strategies.selection;
 
 import com.unimelb.swen30006.mailroom.SelectionStrategy;
@@ -26,8 +30,17 @@ public class FullnessSelectionStrategy implements SelectionStrategy
         throw new NoBoxReadyException();
     }
 
+    /**
+     * Compares two storage box summaries based on the number of items
+     */
     private class BoxFullnessComparator implements Comparator<StorageBox.Summary>
     {
+        /**
+         * Compare two storage box summaries based on the number of items contained
+         * @param s1 the first storage box summary to compare
+         * @param s2 the second storage box summary to compare
+         * @return 1 if s1 contains more items than s2, -1 if it contains less and 0 if the number is equal
+         */
         public int compare(StorageBox.Summary s1, StorageBox.Summary s2)
         {
             return Integer.compare(s2.numItems, s1.numItems);

@@ -1,3 +1,7 @@
+/**
+ * Author: Robert Holt
+ * Last Modified: 2016-03-11
+ */
 package com.unimelb.swen30006.mailroom.strategies.sorting;
 
 import com.unimelb.swen30006.mailroom.MailItem;
@@ -83,6 +87,7 @@ public class EvenDistributionSortingStrategy implements SortingStrategy
             e.printStackTrace();
             System.exit(0);
         }
+        return null;
     }
 
     /**

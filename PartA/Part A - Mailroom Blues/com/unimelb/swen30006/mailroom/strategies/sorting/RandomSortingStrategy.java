@@ -1,3 +1,8 @@
+/**
+ * Author: Robert Holt
+ * Last Modified: 2016-03-11
+ */
+
 package com.unimelb.swen30006.mailroom.strategies.sorting;
 
 import com.unimelb.swen30006.mailroom.MailItem;
@@ -10,7 +15,7 @@ import com.unimelb.swen30006.mailroom.exceptions.MailOverflowException;
 import java.util.HashMap;
 import java.util.Random;
 
-/**ll
+/**
  * Randomly picks a box between "0" and numMailBoxes - 1
  */
 public class RandomSortingStrategy implements SortingStrategy
@@ -71,6 +76,11 @@ public class RandomSortingStrategy implements SortingStrategy
         return null;
     }
 
+    /**
+     * Pick a mailbox at random, given the maximum number of mailboxes that can exist
+     * @param numMailBoxes the maximum number of mailboxes the mail storage can support
+     * @return the identifier of the randomly selected mailbox
+     */
     private String getRandomBoxID(int numMailBoxes)
     {
         // Pick a numbered mailbox, between 0 and numMailBoxes-1
