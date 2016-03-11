@@ -1,5 +1,4 @@
-/**
- * Author: Robert Holt
+/* Author: Robert Holt
  * Last Modified: 2016-03-11
  */
 

@@ -1,9 +1,8 @@
-/**
- * Author: Robert Holt
+/* Author: Robert Holt
  * Last Modified: 2016-03-11
  */
 
-package com.unimelb.swen30006.mailroom.strategies.delivery;
+package com.unimelb.swen30006.mailroom.strategies.selection;
 
 import com.unimelb.swen30006.mailroom.SelectionStrategy;
 import com.unimelb.swen30006.mailroom.StorageBox;

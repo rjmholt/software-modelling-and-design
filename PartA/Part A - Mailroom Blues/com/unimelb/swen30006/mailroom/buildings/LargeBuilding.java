@@ -1,5 +1,4 @@
-/**
- * Author: Robert Holt
+/* Author: Robert Holt
  * Last Modified: 2016-03-11
  */
 package com.unimelb.swen30006.mailroom.buildings;

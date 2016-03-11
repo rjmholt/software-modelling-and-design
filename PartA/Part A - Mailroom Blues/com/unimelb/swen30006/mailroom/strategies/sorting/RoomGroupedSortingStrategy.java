@@ -1,3 +1,6 @@
+/* Author: Robert Holt
+ * Last Modified: 2016-03-11
+ */
 package com.unimelb.swen30006.mailroom.strategies.sorting;
 
 import com.unimelb.swen30006.mailroom.MailItem;
@@ -8,8 +11,6 @@ import com.unimelb.swen30006.mailroom.exceptions.DuplicateIdentifierException;
 import com.unimelb.swen30006.mailroom.exceptions.MailOverflowException;
 
 /**
- * Created by rob on 4/03/16.
- *
  * This sorting strategy seeks to sort mail by floor, so that
  * a delivery bot only needs to visit grouped floors. This strategy may
  * fail where mail is heavily apportioned to one room, and will be slow
