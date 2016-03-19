@@ -1,6 +1,9 @@
 /* SWEN30006 Software Modelling and Design 
  * Project 1 - Mailroom Blues
  * Author: Mathew Blair <mathew.blair@unimelb.edu.au>
+ *
+ * Last Modified: 2016-03-16
+ * Modified by: Robert Holt, 
  */
 package com.unimelb.swen30006.mailroom;
 
@@ -9,6 +12,7 @@ import com.unimelb.swen30006.mailroom.buildings.BuildingFactory;
 import com.unimelb.swen30006.mailroom.samples.SimpleMailGenerator;
 import com.unimelb.swen30006.mailroom.samples.SimpleMailStorage;
 import com.unimelb.swen30006.mailroom.strategies.delivery.SortedByFloorDeliveryStrategy;
+import com.unimelb.swen30006.mailroom.strategies.selection.FullnessSelectionStrategy;
 import com.unimelb.swen30006.mailroom.strategies.selection.RandomSelectionStrategy;
 import com.unimelb.swen30006.mailroom.strategies.sorting.EvenDistributionSortingStrategy;
 import com.unimelb.swen30006.mailroom.strategies.sorting.RandomSortingStrategy;
@@ -42,7 +46,7 @@ public class Simulation
 
         // Create the appropriate strategies
         SortingStrategy sortStrategy = new EvenDistributionSortingStrategy(testBuilding.getMaxBoxes());
-        SelectionStrategy selectionStrategy = new RandomSelectionStrategy();
+        SelectionStrategy selectionStrategy = new FullnessSelectionStrategy();
         DeliveryStrategy deliveryStrategy = new SortedByFloorDeliveryStrategy();
 
         // Run the simulation with the appropriate arguments

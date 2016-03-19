@@ -53,8 +53,3 @@ would be to add a Logger that collects information as the simulation
 runs and prints it at the end, so that the program is more extensible,
 the Logger and Simulation are agnostic of one another and the logic is
 separate.
-
-Use of General Design Practices in Model
-----------------------------------------
-The Simulation makes good use of interfaces, particularly for
-strategies.

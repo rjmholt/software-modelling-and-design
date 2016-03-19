@@ -1,6 +1,10 @@
-/* Author: Robert Holt
+/* SWEN30006 Software Modelling and Design
+ * Project 1 - Mailroom Blues
+ * Author: Robert Holt
+ * SID: 
  * Last Modified: 2016-03-11
  */
+
 package com.unimelb.swen30006.mailroom.strategies.selection;
 
 import com.unimelb.swen30006.mailroom.SelectionStrategy;
