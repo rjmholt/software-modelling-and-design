@@ -19,6 +19,13 @@ import java.util.Random;
  */
 public class RandomSelectionStrategy implements SelectionStrategy
 {
+    private Random randomiser;
+
+    public RandomSelectionStrategy(long seed)
+    {
+        this.randomiser = new Random(seed);
+    }
+
     /**
      * Takes the list of summaries and picks one of them at random using a randomised
      * index of the array.
@@ -31,9 +38,8 @@ public class RandomSelectionStrategy implements SelectionStrategy
     {
         // Make sure there are boxes to deliver
         if (summaries.length > 0) {
-            Random randomiser = new Random(0);
             // Pick a box at random by index
-            StorageBox.Summary selection = summaries[randomiser.nextInt(summaries.length)];
+            StorageBox.Summary selection = summaries[this.randomiser.nextInt(summaries.length)];
             return selection.identifier;
         }
         // No boxes ready to select

@@ -25,9 +25,9 @@ public class RandomSortingStrategy implements SortingStrategy
     private final int numMailBoxes;
     private final Random randomiser;
 
-    public RandomSortingStrategy(int numMailBoxes) {
+    public RandomSortingStrategy(long seed, int numMailBoxes) {
         this.numMailBoxes = numMailBoxes;
-        this.randomiser = new Random(0);
+        this.randomiser = new Random(seed);
     }
 
     /**
