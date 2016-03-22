@@ -2,7 +2,7 @@
  * Project 1 - Mailroom Blues
  * Author: Robert Holt
  * SID: 
- * Last Modified: 2016-03-11
+ * Last Modified: 2016-03-22
  */
 
 package com.unimelb.swen30006.mailroom.strategies.sorting;
@@ -27,7 +27,7 @@ public class RandomSortingStrategy implements SortingStrategy
 
     public RandomSortingStrategy(int numMailBoxes) {
         this.numMailBoxes = numMailBoxes;
-        this.randomiser = new Random();
+        this.randomiser = new Random(0);
     }
 
     /**

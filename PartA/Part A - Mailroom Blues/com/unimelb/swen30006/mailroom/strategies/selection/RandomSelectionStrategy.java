@@ -2,7 +2,7 @@
  * Project 1 - Mailroom Blues
  * Author: Robert Holt
  * SID: 
- * Last Modified: 2016-03-11
+ * Last Modified: 2016-03-22
  */
 
 
@@ -31,7 +31,7 @@ public class RandomSelectionStrategy implements SelectionStrategy
     {
         // Make sure there are boxes to deliver
         if (summaries.length > 0) {
-            Random randomiser = new Random();
+            Random randomiser = new Random(0);
             // Pick a box at random by index
             StorageBox.Summary selection = summaries[randomiser.nextInt(summaries.length)];
             return selection.identifier;
