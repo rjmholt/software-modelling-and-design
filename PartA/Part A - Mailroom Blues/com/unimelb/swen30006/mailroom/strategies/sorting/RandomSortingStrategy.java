@@ -13,6 +13,7 @@ import com.unimelb.swen30006.mailroom.SortingStrategy;
 import com.unimelb.swen30006.mailroom.StorageBox;
 import com.unimelb.swen30006.mailroom.exceptions.DuplicateIdentifierException;
 import com.unimelb.swen30006.mailroom.exceptions.MailOverflowException;
+import com.unimelb.swen30006.mailroom.strategies.selection.RandomSelectionStrategy;
 
 import java.util.HashMap;
 import java.util.Random;
@@ -25,7 +26,14 @@ public class RandomSortingStrategy implements SortingStrategy
     private final int numMailBoxes;
     private final Random randomiser;
 
-    public RandomSortingStrategy(long seed, int numMailBoxes) {
+    public RandomSortingStrategy(int numMailBoxes)
+    {
+        this.numMailBoxes = numMailBoxes;
+        this.randomiser = new Random();
+    }
+
+    public RandomSortingStrategy(long seed, int numMailBoxes)
+    {
         this.numMailBoxes = numMailBoxes;
         this.randomiser = new Random(seed);
     }

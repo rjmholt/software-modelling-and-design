@@ -21,6 +21,11 @@ public class RandomSelectionStrategy implements SelectionStrategy
 {
     private Random randomiser;
 
+    public RandomSelectionStrategy()
+    {
+        this.randomiser = new Random();
+    }
+
     public RandomSelectionStrategy(long seed)
     {
         this.randomiser = new Random(seed);
